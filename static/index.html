@@ -24,29 +24,36 @@
     <div class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-offset-1 col-md-10">
             <form class="form-horizontal" role="form">
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="formFullName" class="control-label">Email</label>
+                  <label for="formFullName" class="control-label">Nome Completo</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-4">
                   <input type="text" class="form-control" id="formFullName" placeholder="Nome Completo">
                 </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
+                  <div class="col-sm-offset-1 col-sm-2  ">
                   <label for="formPhoneNumber" class="control-label">Telefone Celular:</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-3">
                   <input type="text" class="form-control" id="formPhoneNumber" placeholder="319XXXXXXXX">
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-2">
+                  <label for="formSex" class="control-label">Sexo</label>
+                </div>
+                <div class="col-sm-2">
+                  <select id="formSex" class="form-control">
+                      <option>F</option>
+                      <option>M</option>
+                  </select>
+                </div>
+                <div class="col-sm-offset-1 col-sm-1">
                   <label for="formEmail" class="control-label">Email</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-6">
                   <input type="email" class="form-control" id="formEmail" placeholder="joao@aaee.ufmg.br">
                 </div>
               </div>
@@ -60,41 +67,48 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="formEmail" class="control-label">Email</label>
+                  <label for="formCourse" class="control-label">Curso</label>
                 </div>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                <div class="col-sm-4">
+                <!--Depois transformar isso em dados no Modelo Django para serem editados e buscados.-->
+                  <select id="formCourse" class="form-control">
+                      <option>Engenharia Eletrica</option>
+                      <option>Engenharia Mecanica</option>
+                      <option>Engenharia de Producao</option>
+                      <option>Engenharia de Minas</option>
+                      <option>Engenharia Metalurgica</option>
+                      <option>Engenharia Civil</option>
+                      <option>Engenharia de Controle e Automacao</option>
+                      <option>Engenharia de Sistemas</option>
+                      <option>Engenharia de Ambiental</option>
+                  </select>
                 </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="formFacebookLink" class="control-label">Password</label>
+                <div class="col-sm-offset-1  col-sm-1">
+                  <label for="formSemester" class="control-label">Periodo</label>
                 </div>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="formEmail" class="control-label">Email</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="formFacebookLink" class="control-label">Password</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" id="formSemester" min="1" max="16" placeholder="0 - 16">
                 </div>
               </div>
               <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="active btn btn-success">Submit Form</button>
-                </div>
+                  <div class="col-sm-2">
+                      <label for="formSuburb" class="control-label">Bairro</label>
+                  </div>
+                  <div class="col-sm-4">
+                      <input type="text" class="form-control" id="formSuburb" placeholder="Ouro Preto, Castelo, Savassi...">
+                  </div>
+                  <div class="col-sm-offset-1 col-sm-1">
+                      <label for="formCity" class="control-label">Cidade</label>
+                  </div>
+                  <div class="col-sm-4">
+                      <input type="text" class="form-control" id="formCity" placeholder="Belo Horizonte, Contagem, Betim...">
+                  </div>
               </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="active btn btn-success">Submit Form</button>
+                    </div>
+                </div>
             </form>
           </div>
         </div>
