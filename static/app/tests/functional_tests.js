@@ -12,4 +12,10 @@ describe('AAEE_Form App', function() {
 
         expect(browser.getTitle()).toEqual('Log in | Django site admin');
     });
+
+    it('unfilled name should indicate green background', function () {
+        var nameInput = element(by.model(person.fullName));
+
+        expect(nameInput).not.toBeNull();
+    });
 });

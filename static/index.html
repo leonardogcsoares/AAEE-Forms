@@ -1,4 +1,4 @@
-<html ng-app><head>
+<html ng-app="FormApp"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -7,7 +7,7 @@
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
 
     <title>AAEE Questionario</title>
-  </head><body>
+  </head><body ng-controller="formController">
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -106,7 +106,7 @@
               </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="active btn btn-success">Submit Form</button>
+                        <button type="submit" class="active btn btn-success">Submeter</button>
                     </div>
                 </div>
             </form>
@@ -152,7 +152,9 @@
       </div>
     </footer>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  
+  <script src="Scripts/angular.min.js"></script>
+
+    <!--App Library-->
+    <script src="app/app.js"></script>
 
 </body></html>
