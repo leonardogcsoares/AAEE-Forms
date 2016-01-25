@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS':  os.path.join(os.path.dirname(__file__) , '../static').replace('\\','/')
     },
 ]
 

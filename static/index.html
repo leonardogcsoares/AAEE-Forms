@@ -1,10 +1,12 @@
-<html><head>
+<html ng-app><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <title>AAEE Questionario</title>
   </head><body>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -26,7 +28,39 @@
             <form class="form-horizontal" role="form">
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="inputEmail3" class="control-label">Email</label>
+                  <label for="formFullName" class="control-label">Email</label>
+                </div>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="formFullName" placeholder="Nome Completo">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="formPhoneNumber" class="control-label">Telefone Celular:</label>
+                </div>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="formPhoneNumber" placeholder="319XXXXXXXX">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="formEmail" class="control-label">Email</label>
+                </div>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="formEmail" placeholder="joao@aaee.ufmg.br">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="formFacebookLink" class="control-label">Link do Facebook</label>
+                </div>
+                <div class="col-sm-10">
+                  <input type="url" class="form-control" id="formFacebookLink" placeholder="www.facebook.com/leonardogcsoares">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="formEmail" class="control-label">Email</label>
                 </div>
                 <div class="col-sm-10">
                   <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
@@ -34,7 +68,7 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="inputPassword3" class="control-label">Password</label>
+                  <label for="formFacebookLink" class="control-label">Password</label>
                 </div>
                 <div class="col-sm-10">
                   <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
@@ -42,7 +76,7 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="inputEmail3" class="control-label">Email</label>
+                  <label for="formEmail" class="control-label">Email</label>
                 </div>
                 <div class="col-sm-10">
                   <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
@@ -50,39 +84,7 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="inputPassword3" class="control-label">Password</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputEmail3" class="control-label">Email</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputPassword3" class="control-label">Password</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputEmail3" class="control-label">Email</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputPassword3" class="control-label">Password</label>
+                  <label for="formFacebookLink" class="control-label">Password</label>
                 </div>
                 <div class="col-sm-10">
                   <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
@@ -135,6 +137,8 @@
         </div>
       </div>
     </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   
 
 </body></html>
