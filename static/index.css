@@ -1,0 +1,17 @@
+/*.my-form {*/
+  /*transition:0.5s linear all;*/
+  /*background: white;*/
+/*}*/
+/*.my-form.ng-invalid {*/
+  /*background: red;*/
+  /*color:white;*/
+/*}*/
+
+.my-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+.my-form input.ng-valid.ng-touched {
+    background-color: transparent;
+    transition:0.5s linear all;
+}

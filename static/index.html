@@ -5,6 +5,8 @@
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="static/index.css" rel="stylesheet" type="text/css">
+
 
     <title>AAEE Questionario</title>
   </head><body ng-controller="formController">
@@ -25,53 +27,53 @@
       <div class="container">
         <div class="row">
           <div class="col-md-offset-1 col-md-10">
-            <form class="form-horizontal" role="form">
+            <form name="myForm" id="myForm" class="form-horizontal my-form" ng-submit="submitForm()">
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="formFullName" class="control-label">Nome Completo</label>
+                  <label class="control-label">Nome Completo</label>
                 </div>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control" id="formFullName" placeholder="Nome Completo">
+                  <input type="text" class="form-control" ng-model="person.fullName" required placeholder="Nome Completo">
                 </div>
                   <div class="col-sm-offset-1 col-sm-2  ">
-                  <label for="formPhoneNumber" class="control-label">Telefone Celular:</label>
+                  <label class="control-label">Telefone Celular:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" id="formPhoneNumber" placeholder="319XXXXXXXX">
+                  <input type="number" class="form-control" ng-model="person.telefone" required placeholder="319XXXXXXXX">
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="formSex" class="control-label">Sexo</label>
+                  <label class="control-label">Sexo</label>
                 </div>
                 <div class="col-sm-2">
-                  <select id="formSex" class="form-control">
+                  <select ng-model="person.sex" class="form-control">
                       <option>F</option>
                       <option>M</option>
                   </select>
                 </div>
                 <div class="col-sm-offset-1 col-sm-1">
-                  <label for="formEmail" class="control-label">Email</label>
+                  <label class="control-label">Email</label>
                 </div>
                 <div class="col-sm-6">
-                  <input type="email" class="form-control" id="formEmail" placeholder="joao@aaee.ufmg.br">
+                  <input type="email" class="form-control" ng-model="person.email" required placeholder="joao@aaee.ufmg.br">
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="formFacebookLink" class="control-label">Link do Facebook</label>
+                  <label class="control-label">Link do Facebook</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="url" class="form-control" id="formFacebookLink" placeholder="www.facebook.com/leonardogcsoares">
+                  <input type="url" class="form-control" ng-model="person.facebookLink" required placeholder="http://www.facebook.com/leonardogcsoares">
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="formCourse" class="control-label">Curso</label>
+                  <label class="control-label">Curso</label>
                 </div>
                 <div class="col-sm-4">
                 <!--Depois transformar isso em dados no Modelo Django para serem editados e buscados.-->
-                  <select id="formCourse" class="form-control">
+                  <select ng-model="person.course" required class="form-control">
                       <option>Engenharia Eletrica</option>
                       <option>Engenharia Mecanica</option>
                       <option>Engenharia de Producao</option>
@@ -84,29 +86,29 @@
                   </select>
                 </div>
                 <div class="col-sm-offset-1  col-sm-1">
-                  <label for="formSemester" class="control-label">Periodo</label>
+                  <label class="control-label">Periodo</label>
                 </div>
                 <div class="col-sm-4">
-                  <input type="number" class="form-control" id="formSemester" min="1" max="16" placeholder="0 - 16">
+                  <input type="number" class="form-control" ng-model="person.semester" required min="1" max="16" placeholder="0 - 16">
                 </div>
               </div>
               <div class="form-group">
                   <div class="col-sm-2">
-                      <label for="formSuburb" class="control-label">Bairro</label>
+                      <label class="control-label">Bairro</label>
                   </div>
                   <div class="col-sm-4">
-                      <input type="text" class="form-control" id="formSuburb" placeholder="Ouro Preto, Castelo, Savassi...">
+                      <input type="text" class="form-control" ng-model="person.suburb" required placeholder="Ouro Preto, Castelo, Savassi...">
                   </div>
                   <div class="col-sm-offset-1 col-sm-1">
-                      <label for="formCity" class="control-label">Cidade</label>
+                      <label class="control-label">Cidade</label>
                   </div>
                   <div class="col-sm-4">
-                      <input type="text" class="form-control" id="formCity" placeholder="Belo Horizonte, Contagem, Betim...">
+                      <input type="text" class="form-control" ng-model="person.city" required placeholder="Belo Horizonte, Contagem, Betim...">
                   </div>
               </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="active btn btn-success">Submeter</button>
+                        <button id="submitButton" type="submit" class="active btn btn-success">Submeter</button>
                     </div>
                 </div>
             </form>
@@ -152,9 +154,10 @@
       </div>
     </footer>
 
-  <script src="Scripts/angular.min.js"></script>
+    <script src="/static/Scripts/angular.min.js"></script>
 
     <!--App Library-->
-    <script src="app/app.js"></script>
+    <script src="/static/app/app.js"></script>
+    <script src="/static/app/controllers/controllers.js"></script>
 
 </body></html>

@@ -120,4 +120,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+## VERY IMPORTANT: this is the correct form of importing static files to development server
+
 STATIC_URL = '/static/'
+STATIC_ROOT = ''
+STATICFILES_DIRS = ( os.path.join('static'), )
+# STATIC_ROOT = '/home/leo/Documents/WebProjects/aaee_env/aaee_form/static'

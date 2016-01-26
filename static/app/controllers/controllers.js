@@ -2,11 +2,10 @@
 angular.module('FormApp.controllers', [])
     .controller('formController', function($scope) {
 
-        $scope.isValidTextEntry = function (input) {
-            if (input === "" || input === " ")
-                return false;
+        $scope.person = {};
 
-            return true;
-        }
+        $scope.submitForm = function () {
+                console.log("submitForm called");
+        };
 
 });
