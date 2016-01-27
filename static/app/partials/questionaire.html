@@ -1,0 +1,85 @@
+<form name="myForm" id="myForm" class="form-horizontal my-form" ng-submit="submitForm()">
+  <div class="form-group">
+    <div class="col-sm-2">
+      <label class="control-label">Nome Completo</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" ng-model="person.fullName" ng-required="true" placeholder="Nome Completo">
+    </div>
+      <div class="col-sm-offset-1 col-sm-2  ">
+      <label class="control-label">Telefone Celular:</label>
+    </div>
+    <div class="col-sm-3">
+      <input type="number" class="form-control" ng-model="person.telefone" ng-required="true" placeholder="319XXXXXXXX">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2">
+      <label class="control-label">Sexo</label>
+    </div>
+    <div class="col-sm-2">
+      <select ng-model="person.sex" class="form-control">
+          <option>F</option>
+          <option>M</option>
+      </select>
+    </div>
+    <div class="col-sm-offset-1 col-sm-1">
+      <label class="control-label">Email</label>
+    </div>
+    <div class="col-sm-6">
+      <input type="email" class="form-control" ng-model="person.email" ng-required="true" placeholder="joao@aaee.ufmg.br">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2">
+      <label class="control-label">Link do Facebook</label>
+    </div>
+    <div class="col-sm-10">
+      <input type="url" class="form-control" ng-model="person.facebookLink" ng-required="true" placeholder="http://www.facebook.com/leonardogcsoares">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2">
+      <label class="control-label">Curso</label>
+    </div>
+    <div class="col-sm-4">
+    <!--Depois transformar isso em dados no Modelo Django para serem editados e buscados.-->
+      <select ng-model="person.course" ng-required="true" class="form-control">
+          <option>Engenharia Eletrica</option>
+          <option>Engenharia Mecanica</option>
+          <option>Engenharia de Producao</option>
+          <option>Engenharia de Minas</option>
+          <option>Engenharia Metalurgica</option>
+          <option>Engenharia Civil</option>
+          <option>Engenharia de Controle e Automacao</option>
+          <option>Engenharia de Sistemas</option>
+          <option>Engenharia de Ambiental</option>
+      </select>
+    </div>
+    <div class="col-sm-offset-1  col-sm-1">
+      <label class="control-label">Periodo</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="number" class="form-control" ng-model="person.semester" ng-required="true" min="1" max="16" placeholder="0 - 16">
+    </div>
+  </div>
+  <div class="form-group">
+      <div class="col-sm-2">
+          <label class="control-label">Bairro</label>
+      </div>
+      <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="person.suburb" ng-required="true" placeholder="Ouro Preto, Castelo, Savassi...">
+      </div>
+      <div class="col-sm-offset-1 col-sm-1">
+          <label class="control-label">Cidade</label>
+      </div>
+      <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="person.city" ng-required="true" placeholder="Belo Horizonte, Contagem, Betim...">
+      </div>
+  </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="submitButton" type="submit" class="active btn btn-success">Submeter</button>
+        </div>
+    </div>
+</form>

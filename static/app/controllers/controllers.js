@@ -6,6 +6,7 @@ angular.module('FormApp.controllers', [])
 
         $scope.submitForm = function () {
                 console.log("submitForm called");
+                console.log($scope.person);
         };
 
 });

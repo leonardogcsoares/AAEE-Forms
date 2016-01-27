@@ -5,6 +5,8 @@ exports.config = {
     files: [
         '../../Scripts/angular.min.js',
         '../../Scripts/angular-mocks.js',
+        '../../Scripts/angular-resource.js',
+        '../../Scripts/angular-route.js',
         '../app.js'
     ],
     capabilities: {
