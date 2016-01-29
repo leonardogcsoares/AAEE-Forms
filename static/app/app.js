@@ -7,8 +7,6 @@ var app = angular.module('FormApp', [
 
 app.config(function ($resourceProvider, $routeProvider) {
         $resourceProvider.defaults.stripTrailingSlashes = false;
-
-
         // long format due to Django
         $routeProvider.
             when('/', {

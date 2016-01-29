@@ -1,12 +1,14 @@
 
 angular.module('FormApp.controllers', [])
-    .controller('formController', function($scope) {
+    .controller('formController', ['$scope', 'UserFactory', function($scope, UserFactory) {
 
         $scope.person = {};
 
-        $scope.submitForm = function () {
-                console.log("submitForm called");
-                console.log($scope.person);
+        $scope.submitUser = function () {        
+                UserFactory.saveUser($scope.person, function(response) {
+                        // Callback
+                        $scope.responseStatus = response.status;
+                });
         };
 
-});
+}]);

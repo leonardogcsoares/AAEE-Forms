@@ -15,13 +15,13 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'Scripts/angular.min.js',
-      'Scripts/angular-mocks.js',
-      'Scripts/angular-resource.js',
-      'Scripts/angular-route.js',
-      'app/controllers/*.js',
-      'app/factories/*.js',
+      'bower_components/angular/angular.min.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-resource/angular-resource.min.js',
+      'bower_components/angular-route/angular-route.min.js',
       'app/app.js',
+      'app/factories/*.js',
+      'app/controllers/*.js',
       'app/tests/**/unit*.js',
     ],
 
@@ -59,15 +59,19 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
+    plugins: [
+      'karma-firefox-launcher',
+      'karma-jasmine',
+      'karma-phantomjs-launcher'
+    ],
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
-
+    browsers: ['PhantomJS'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
