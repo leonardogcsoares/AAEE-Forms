@@ -6,12 +6,12 @@ describe('AAEE_Form App', function() {
 
     // Edith wants to see if the app has a django-rest-framework,
     // she access the DRF Admin website.
-    it('App should have a django-rest-framework api', function() {
-        browser.ignoreSynchronization = true;
-        browser.get('http://localhost:8000/admin');
-
-        expect(browser.getTitle()).toEqual('Log in | Django site admin');
-    });
+//    it('App should have a django-rest-framework api', function() {
+//        browser.ignoreSynchronization = true;
+//        browser.get('http://localhost:8000/admin');
+//
+//        expect(browser.getTitle()).toEqual('Log in | Django site admin');
+//    });
 
 
     // Now Edith wants to open the main page of the website and fill out the questionaire.
@@ -32,10 +32,13 @@ describe('AAEE_Form App', function() {
     // up telling her she needs to correctly fill the fields before submitting.
     describe('models exist and are validated before submitting', function () {
 
-        beforeEach(function () {
-            browser.ignoreSynchronization = true;
-            browser.get('http://localhost:8000');
-        });
+//        beforeEach(function () {
+//            browser.ignoreSynchronization = true;
+//            browser.get('http://localhost:8000');
+//        });
+
+        browser.ignoreSynchronization = true;
+        browser.get('http://localhost:8000');
 
         it('page should open on index.html', function() {
             expect(browser.getTitle()).toContain('AAEE Questionario');
@@ -49,7 +52,7 @@ describe('AAEE_Form App', function() {
         });
 
         it('should turn background red if telefone invalid', function () {
-            var inputTelefone = element(by.model('person.telefone')).sendKeys("aaa");
+            var inputTelefone = element(by.model('person.telephone')).sendKeys("aaa");
             inputTelefone.sendKeys("\t")
 
             expect(inputTelefone.getAttribute('class')).toContain("ng-invalid");
@@ -93,11 +96,14 @@ describe('AAEE_Form App', function() {
 
     describe('on confirmation of submission, should go to confirmation view', function () {
 
+        browser.ignoreSynchronization = true;
+        browser.get('http://localhost:8000');
+
 
         // Clears all text from input fields
         beforeEach(function () {
             element(by.model('person.fullName')).clear();
-            element(by.model('person.telefone')).clear();
+            element(by.model('person.telephone')).clear();
             element(by.model('person.email')).clear();
             element(by.model('person.sex')).clear();
             element(by.model('person.facebookLink')).clear();
@@ -126,8 +132,6 @@ describe('AAEE_Form App', function() {
             expect(browser.getCurrentUrl()).toContain('confirmation');
 
         });
-
-
 
 
     });

@@ -1,19 +1,23 @@
 
 var app = angular.module('FormApp');
 
-app.factory('UserFactory',['$http', '$resource', function($http, $resource) {
+app.factory('FormFactory',['$http', '$resource', function($http, $resource) {
 
-    UserFactory = {};
-    var NewUser = $resource('api/save_user');
+    FormFactory = {};
+    var NewUser = $resource('/api/forms/:id', {id: "@id"}, {
+        post: {method: 'POST'},
+        checked: {method: 'POST', params:{discount:true}}
+    });
     
-    UserFactory.saveUser = function(person, callback) {
-        var newPerson = new NewUser();
-        newPerson.data = person;
-        newPerson.$save(function(response) {
-            // Save success callback
+    FormFactory.saveUser = function(person, callback) {
+        var newPerson = new NewUser(person);
+        newPerson.$post(function(response) {
+            // Success callback
+            callback(response);
+        }, function(error) {
             callback(response);
         });
     };
-    
-    return UserFactory;
+
+    return FormFactory;
 }]);

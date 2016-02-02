@@ -13,7 +13,7 @@ describe('Form App', function () {
         $controller = _$controller_;
         //$scope = $rootScope.$new();
         controller = $controller('formController', {$scope: $scope});
-        factory = $injector.get('UserFactory');
+        factory = $injector.get('FormFactory');
         $httpBackend = $injector.get('$httpBackend');
     }));
     
@@ -34,29 +34,37 @@ describe('Form App', function () {
     });
     
     it('should send a post request to save user and return callback success (200)', function() {
-       $httpBackend.whenPOST('api/save_user').respond({status: 200});
+       var response = {};
+       response.status = 200;
+       $httpBackend.whenPOST('/api/forms/').respond(response);
        spyOn(factory, 'saveUser').and.callThrough();
        spyOn($scope, 'submitUser').and.callThrough();
        var callback = jasmine.createSpy();
-       var userData = {}
-        
-       $scope.submitUser({}, callback)
+
+       $scope.submitUser({}, callback);
        //factory.saveUser(userData, callback);
        $httpBackend.flush();
        
-       expect($scope.responseStatus).toEqual(200);
+       expect($scope.responseStatus).toEqual(response.status);
     });
     
     it('should send a post request to save user and return error callback (400)', function() {
-       $httpBackend.whenPOST('api/save_user').respond({status: 400});
+       var response = {};
+       response.status = 400;
+       $httpBackend.whenPOST('/api/forms/').respond(response);
        spyOn(factory, 'saveUser').and.callThrough();
        spyOn($scope, 'submitUser').and.callThrough();
        var callback = jasmine.createSpy();
         
-       $scope.submitUser({}, callback)
+       $scope.submitUser({}, callback);
        $httpBackend.flush();
        
        expect($scope.responseStatus).not.toEqual(200);
+    });
+
+    it('should clear all input fields after POST', function() {
+        spyOn($scope, 'submitUser');
+
     });
     
     it('should lead user to the next page if callback response success', function() {

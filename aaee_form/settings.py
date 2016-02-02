@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'questionaires'
+    'forms',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -127,3 +127,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = ''
 STATICFILES_DIRS = ( os.path.join('static'), )
 # STATIC_ROOT = '/home/leo/Documents/WebProjects/aaee_env/aaee_form/static'
+
+# Rest Framework settings
+# http://www.django-rest-framework.org/api-guide/testing/#testing-responses
+
+REST_FRAMEWORK = {
+
+}
