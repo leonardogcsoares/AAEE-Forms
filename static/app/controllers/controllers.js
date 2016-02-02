@@ -23,12 +23,4 @@ angular.module('FormApp.controllers', [])
             console.log($scope.persons);
         });
 
-        $scope.checked = function(person) {
-            console.log("On checked called");
-
-//            FormFactory.setCheckedDIscount(person.id, person.discount, function(user) {
-//                person.discount = user.discount;
-//            });
-        };
-
     }]);
