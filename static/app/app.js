@@ -14,8 +14,11 @@ app.config(function ($resourceProvider, $routeProvider) {
                 controller: 'formController'
             }).
             when('/confirmation', {
-                templateUrl: 'static/app/partials/questionaire-confirmation.html',
-                controller: 'confirmationController'
+                templateUrl: 'static/app/partials/questionaire-confirmation.html'
+            }).
+            when('/aaee_main', {
+                templateUrl: 'static/app/partials/aaee-main.html',
+                controller: 'userTableController'
             }).
             otherwise({
                 redirectTo: '/'

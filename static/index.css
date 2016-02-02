@@ -15,3 +15,32 @@
     background-color: transparent;
     transition:0.5s linear all;
 }
+
+.wrapper {
+    min-height: 80%;
+    position: relative;
+}
+
+footer {
+	background:#ffab62;
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+
+    font-size: 60%;
+    text-align: center;
+}
+
+th {
+
+    font-size: 70%;
+    text-align: center;
+}

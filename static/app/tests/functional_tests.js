@@ -28,6 +28,8 @@ describe('AAEE_Form App', function() {
     });
 
 
+
+
     // Edith types all the inputs wrongly and sees the input fields going red and messages popping
     // up telling her she needs to correctly fill the fields before submitting.
     describe('models exist and are validated before submitting', function () {
@@ -96,29 +98,22 @@ describe('AAEE_Form App', function() {
 
     describe('on confirmation of submission, should go to confirmation view', function () {
 
-        browser.ignoreSynchronization = true;
-        browser.get('http://localhost:8000');
-
-
         // Clears all text from input fields
         beforeEach(function () {
-            element(by.model('person.fullName')).clear();
-            element(by.model('person.telephone')).clear();
-            element(by.model('person.email')).clear();
-            element(by.model('person.sex')).clear();
-            element(by.model('person.facebookLink')).clear();
-            element(by.model('person.course')).clear();
-            element(by.model('person.semester')).clear();
-            element(by.model('person.suburb')).clear();
-            element(by.model('person.city')).clear();
+            browser.ignoreSynchronization = true;
+            browser.get('http://localhost:8000');
+            browser.driver.sleep(1000);
 
         });
 
         // Edith fills out the fields correctly this time and clicks submit, she is then taken to a confirmation
         // screen that tells her, that her submission was successful.
         it('should pass to confirmation view if submit successful', function () {
+
+
+            // Sends keys
             element(by.model('person.fullName')).sendKeys('Leonardo Soares');
-            element(by.model('person.telefone')).sendKeys('031997196566');
+            element(by.model('person.telephone')).sendKeys('031997196566');
             element(by.model('person.email')).sendKeys('leonardogcsoares93@gmail.com');
             element(by.model('person.sex')).sendKeys('m');
             element(by.model('person.facebookLink')).sendKeys('https://www.facebook.com/leonardogcsoares');
@@ -127,10 +122,10 @@ describe('AAEE_Form App', function() {
             element(by.model('person.suburb')).sendKeys('Coracao Eucaristico');
             element(by.model('person.city')).sendKeys('Belo Horizonte');
 
-            element(by.id('submitButton')).click();
+            var submitButton = element(by.id('submitButton'));
+            submitButton.click();
 
-            expect(browser.getCurrentUrl()).toContain('confirmation');
-
+            expect(browser.isElementPresent(by.id('confirmation-message'))).toBe(true);
         });
 
 

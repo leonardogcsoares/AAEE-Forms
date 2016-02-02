@@ -1,0 +1,32 @@
+<table>
+    <thead>
+        <tr>
+            <th>Id  </th>
+            <th>Nome  </th>
+            <th>Telefone  </th>
+            <th>Sexo  </th>
+            <th>Email  </th>
+            <th>Facebook  </th>
+            <th>Curso  </th>
+            <th>Semestre  </th>
+            <th>Bairro  </th>
+            <th>Cidade  </th>
+            <th>Desconto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="person in persons">
+            <td>{{ person.id }}</td>
+            <td>{{ person.fullName }}</td>
+            <td>{{ person.telephone }}</td>
+            <td>{{ person.sex }}</td>
+            <td>{{ person.email }}</td>
+            <td><a href="{{ person.facebookLink }}">{{ person.facebookLink }}</a></td>
+            <td>{{ person.course }}</td>
+            <td>{{ person.semester }}</td>
+            <td>{{ person.suburb }}</td>
+            <td>{{ person.city }}</td>
+            <td><input type="checkbox" name="person.discount" ng-model="person.discount" ng-change="checked(person)"></td>
+        </tr>
+    </tbody>
+</table>

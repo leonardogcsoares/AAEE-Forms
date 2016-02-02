@@ -3,10 +3,11 @@ var app = angular.module('FormApp');
 app.directive('userTable', function() {
     return {
         restrict: 'E',
-        transclude: true,
+        transclude: false,
         scope: {
-            persons: '=data'
+            persons: '=',
+            checked: '&'
         },
-        templateUrl: 'user-table.html'
+        templateUrl: '/static/app/directives/user-table.html'
     };
 });
