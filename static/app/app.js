@@ -2,7 +2,8 @@
 var app = angular.module('FormApp', [
     'ngRoute',
     'FormApp.controllers',
-    'ngResource'
+    'ngResource',
+    'ngMaterial'
 ]);
 
 app.config(function ($resourceProvider, $routeProvider) {
@@ -16,8 +17,8 @@ app.config(function ($resourceProvider, $routeProvider) {
             when('/confirmation', {
                 templateUrl: 'static/app/partials/questionaire-confirmation.html'
             }).
-            when('/aaee_main', {
-                templateUrl: 'static/app/partials/aaee-main.html',
+            when('/main', {
+                templateUrl: 'static/app/partials/main-search.html',
                 controller: 'userTableController'
             }).
             otherwise({

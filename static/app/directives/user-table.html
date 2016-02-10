@@ -1,3 +1,4 @@
+<!--Pass all this to Angular Material-->
 <table>
     <thead>
         <tr>
@@ -15,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="person in persons">
+        <tr ng-repeat="person in persons | filter:query">
             <td>{{ person.id }}</td>
             <td>{{ person.fullName }}</td>
             <td>{{ person.telephone }}</td>

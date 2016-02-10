@@ -5,7 +5,8 @@ app.directive('userTable', ['FormFactory', function(FormFactory) {
         restrict: 'E',
         transclude: false,
         scope: {
-            persons: '='
+            persons: '=',
+            query: '@'
         },
         templateUrl: '/static/app/directives/user-table.html',
         link: function(scope, element, attrs) {

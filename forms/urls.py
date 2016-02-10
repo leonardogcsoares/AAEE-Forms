@@ -1,9 +1,7 @@
 from django.conf.urls import include, url
 from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
-from views import FormViewSet
-
-
+from views import FormViewSet, ControlFormViewSet
 
 # router = routers.DefaultRouter()
 # router.register = (r'forms', FormViewSet)
@@ -17,7 +15,7 @@ forms_list = FormViewSet.as_view(actions={
     'post': 'create'
 })
 
-forms_detail = FormViewSet.as_view(actions={
+forms_detail = ControlFormViewSet.as_view(actions={
     'get': 'retrieve',
     'put': 'update',
     'delete': 'destroy'

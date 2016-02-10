@@ -18,5 +18,6 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="static/index.html")),
-    url(r'^', include('forms.urls'))
+    url(r'^', include('forms.urls')),
+    url(r'^', include('users.urls')),
 ]

@@ -132,5 +132,10 @@ STATICFILES_DIRS = ( os.path.join('static'), )
 # http://www.django-rest-framework.org/api-guide/testing/#testing-responses
 
 REST_FRAMEWORK = {
-
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+   'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
 }

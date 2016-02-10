@@ -1,29 +1,25 @@
 <html ng-app="FormApp"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/static/bower_components/angular-material/angular-material.min.css">
+
     <link href="static/index.css" rel="stylesheet" type="text/css">
+
+
 
     <title>AAEE Questionario</title>
   </head><body>
 
+
+    <!--Possibly remove div wrapper-->
     <div class="wrapper">
-      <div class="navbar navbar-default navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>ž
-            </button>
-            <a class="navbar-brand" href="#"><span>AAEE</span></a>
-          </div>
-        </div>
-      </div>
+      <!--Put md-header here-->
       <div class="section">
         <div class="container">
           <div class="row">
@@ -33,8 +29,10 @@
           </div>
         </div>
       </div>
-
     </div>
+
+
+    <!--change footer to md-footer (angular material)-->
     <footer class="section section-primary">
       <div class="container">
         <div class="row">
@@ -67,6 +65,9 @@
     <script src="/static/bower_components/angular/angular.min.js"></script>
     <script src="/static/bower_components/angular-route/angular-route.js"></script>
     <script src="/static/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/static/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/static/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/static/bower_components/angular-material/angular-material.js"></script>
 
     <!--App Library-->
     <script src="/static/app/app.js"></script>
