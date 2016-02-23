@@ -1,9 +1,8 @@
-from django.shortcuts import render
-from rest_framework import viewsets
-from rest_framework import mixins
-from rest_framework import generics
+from django.contrib.auth.models import User
+from oauth2_provider.ext.rest_framework import TokenHasReadWriteScope
+from rest_framework import viewsets, mixins, permissions
 from models import Form
-from serializers import FormSerializer
+from serializers import FormSerializer, UserSerializer
 from rest_framework.permissions import AllowAny
 
 
@@ -25,4 +24,14 @@ class ControlFormViewSet(mixins.RetrieveModelMixin,
                          viewsets.GenericViewSet):
     queryset = Form.objects.all()
     serializer_class = FormSerializer
-    permission_classes = (AllowAny,) #Should setup Authentication Layer to make sure AAEE user is logged in.
+    permission_classes = (AllowAny,)
+
+
+class UserViewSet(mixins.CreateModelMixin,
+                  mixins.RetrieveModelMixin,
+                  mixins.UpdateModelMixin,
+                  mixins.DestroyModelMixin,
+                  viewsets.GenericViewSet):
+    permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

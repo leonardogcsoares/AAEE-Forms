@@ -10,6 +10,9 @@ app.config(function ($resourceProvider, $routeProvider) {
         $resourceProvider.defaults.stripTrailingSlashes = false;
         // long format due to Django
         $routeProvider.
+            //when('/', {
+            //    templateUrl: 'static/app/directives/login.html'
+            //}).
             when('/', {
                 templateUrl: 'static/app/partials/questionaire.html',
                 controller: 'formController'
